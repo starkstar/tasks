@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.bbq.task.mybatis.UserMapper">
+
+
+	<update id="updateUser" parameterType="com.bbq.task.model.User">
+		update task1  set
+		<if test="name != null">
+		name = #{name},
+		</if>
+		<if test="create_at != null">
+		create_at = #{create_at},
+		</if>
+		<if test="update_at != null">
+		update_at = #{update_at}
+		</if>
+		where id = #{id}
+	</update>
+</mapper>
